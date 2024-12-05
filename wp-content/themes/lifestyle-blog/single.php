@@ -12,11 +12,11 @@
                 <header class="entry__header">
 
                     <h1 class="entry__title">
-                        <?php the_title(); ?>
+						<?php the_title(); ?>
                     </h1>
 
                     <div class="entry__meta">
-                        <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+						<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 
                             <div class="entry__meta-author">
                                 <svg width="24" height="24" fill="none" viewBox="0 0 24 24">
@@ -27,18 +27,18 @@
                                           d="M6.8475 19.25H17.1525C18.2944 19.25 19.174 18.2681 18.6408 17.2584C17.8563 15.7731 16.068 14 12 14C7.93201 14 6.14367 15.7731 5.35924 17.2584C4.82597 18.2681 5.70558 19.25 6.8475 19.25Z"></path>
                                 </svg>
                                 <a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>">
-                                    <?php echo get_the_author(); ?>
+									<?php echo get_the_author(); ?>
                                 </a>
                             </div>
 
-                        <?php endwhile; endif; ?>
+						<?php endwhile; endif; ?>
 
                         <div class="entry__meta-date">
                             <svg width="24" height="24" fill="none" viewBox="0 0 24 24">
                                 <circle cx="12" cy="12" r="7.25" stroke="currentColor" stroke-width="1.5"></circle>
                                 <path stroke="currentColor" stroke-width="1.5" d="M12 8V12L14 14"></path>
                             </svg>
-                            <?php echo get_the_date(); ?>
+							<?php echo get_the_date(); ?>
                         </div>
                         <div class="entry__meta-cat">
                             <svg width="24" height="24" fill="none" viewBox="0 0 24 24">
@@ -50,10 +50,10 @@
                                       d="M13.5 7.5L12.5685 5.7923C12.2181 5.14977 11.5446 4.75 10.8127 4.75H6.75C5.64543 4.75 4.75 5.64543 4.75 6.75V11"></path>
                             </svg>
 
-                            <?php
-                            $categories = wp_get_post_categories( get_the_ID() );
-                            ?>
-                            <?php if ( ! empty( $categories ) ) : ?>
+							<?php
+							$categories = wp_get_post_categories( get_the_ID() );
+							?>
+							<?php if ( ! empty( $categories ) ) : ?>
                                 <span class="cat-links">
                                 <?php foreach ( $categories as $cat ) :
                                     $category = get_category( $cat );
@@ -61,7 +61,7 @@
                                     <a href="<?php echo esc_url( get_category_link( $category->term_id ) ); ?>"><?php echo esc_html( $category->name ); ?></a>
                                 <?php endforeach; ?>
                             </span>
-                            <?php endif; ?>
+							<?php endif; ?>
 
                         </div>
                     </div>
@@ -82,11 +82,11 @@
                 <div class="content-primary">
 
                     <div class="entry__content">
-                        <?php while ( have_posts() ) : the_post(); ?>
+						<?php while ( have_posts() ) : the_post(); ?>
 
-                            <?php the_content(); ?>
+							<?php the_content(); ?>
 
-                        <?php endwhile; ?>
+						<?php endwhile; ?>
 
                         <figure class="alignwide">
                             <img src="<?php echo get_template_directory_uri(); ?> /images/sample-1200.jpg"
@@ -117,12 +117,12 @@
                                 <h5 class="entry__author-name">
                                     <a href="#0">
                                         <a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>">
-                                            <?php echo get_the_author(); ?>
+											<?php echo get_the_author(); ?>
                                         </a>
                                     </a>
                                 </h5>
                                 <p>
-                                    <?php echo get_the_author_meta( 'description' ); ?>
+									<?php echo get_the_author_meta( 'description' ); ?>
                                 </p>
                             </div>
                         </div>
@@ -131,24 +131,24 @@
 
                     <div class="post-nav">
                         <div class="post-nav__prev">
-                            <?php
-                            $prev_post = get_previous_post();
-                            if ( ! empty( $prev_post ) ): ?>
+							<?php
+							$prev_post = get_previous_post();
+							if ( ! empty( $prev_post ) ): ?>
                                 <a href="<?php echo get_permalink( $prev_post->ID ); ?>" rel="prev">
                                     <span>Prev</span>
-                                    <?php echo get_the_title( $prev_post->ID ); ?>
+									<?php echo get_the_title( $prev_post->ID ); ?>
                                 </a>
-                            <?php endif; ?>
+							<?php endif; ?>
                         </div>
                         <div class="post-nav__next">
-                            <?php
-                            $next_post = get_next_post();
-                            if ( ! empty( $next_post ) ): ?>
+							<?php
+							$next_post = get_next_post();
+							if ( ! empty( $next_post ) ): ?>
                                 <a href="<?php echo get_permalink( $next_post->ID ); ?>" rel="next">
                                     <span>Next</span>
-                                    <?php echo get_the_title( $next_post->ID ); ?>
+									<?php echo get_the_title( $next_post->ID ); ?>
                                 </a>
-                            <?php endif; ?>
+							<?php endif; ?>
                         </div>
                     </div>
 

@@ -1,44 +1,44 @@
 <?php get_header(); ?>
 
 
-<!-- # site-content
-================================================== -->
-<div id="content" class="s-content s-content--page">
+    <!-- # site-content
+	================================================== -->
+    <div id="content" class="s-content s-content--page">
 
-    <div class="row entry-wrap">
-        <div class="column lg-12">
+        <div class="row entry-wrap">
+            <div class="column lg-12">
 
-            <article class="entry">
+                <article class="entry">
 
-                <header class="entry__header entry__header--narrower">
+                    <header class="entry__header entry__header--narrower">
 
-                    <h1 class="entry__title">
-                        <?php the_title(); ?>
-                    </h1>
+                        <h1 class="entry__title">
+                            <?php the_title(); ?>
+                        </h1>
 
-                </header>
+                    </header>
 
-                <?php while( have_posts() ) : the_post(); ?>
+	                <?php while( have_posts() ) : the_post(); ?>
 
-                    <?php the_content(); ?>
+		                <?php the_content(); ?>
 
-                <?php endwhile; ?>
+	                <?php endwhile; ?>
 
-            </article> <!-- end entry -->
+                </article> <!-- end entry -->
 
-        </div>
-    </div> <!-- end entry-wrap -->
+            </div>
+        </div> <!-- end entry-wrap -->
 
-</div> <!-- end s-content -->
-
-
-<?php get_footer(); ?>
+    </div> <!-- end s-content -->
 
 
-<!-- Java Script
-================================================== -->
-<script src="<?php echo get_template_directory_uri(); ?> /js/plugins.js"></script>
-<script src="<?php echo get_template_directory_uri(); ?> /js/main.js"></script>
+   <?php get_footer(); ?>
+
+
+    <!-- Java Script
+	================================================== -->
+    <script src="<?php echo get_template_directory_uri(); ?> /js/plugins.js"></script>
+    <script src="<?php echo get_template_directory_uri(); ?> /js/main.js"></script>
 
 </body>
 </html>
