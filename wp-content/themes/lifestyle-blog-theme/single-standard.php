@@ -556,7 +556,7 @@
 
                     </div>
                 </div> <!-- end entry-wrap -->
-        </section> <!-- end s-content -->
+        </div> <!-- end s-content -->
 
 
         <!-- # site-footer
