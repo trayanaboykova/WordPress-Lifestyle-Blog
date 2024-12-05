@@ -54,7 +54,7 @@
 
         <div class="s-header__branding">
             <p class="site-title">
-                <a href="index.php" rel="home">Lifestyle Blog</a>
+                <a href="index.php" rel="home">Lifestyle</a>
             </p>
         </div>
 
