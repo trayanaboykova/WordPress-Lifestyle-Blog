@@ -8,3 +8,11 @@
 * HTML Template License: https://www.styleshout.com/attribution-free/
 * License: Free to use in personal and commercial projects with proper attribution to StyleShout.
 */
+
+/*Making the headline a little smaller, so it looks tidier*/
+.hero__entry-title {
+    font-size: 4.5rem;
+}
+
+
+
