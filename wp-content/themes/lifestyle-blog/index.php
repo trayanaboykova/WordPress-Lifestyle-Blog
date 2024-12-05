@@ -66,26 +66,29 @@
                 <h3 class="s-header__nav-heading">Navigate to</h3>
 
                 <ul class="s-header__nav">
-                    <li class="current-menu-item"><a href="index.php" title="">Home</a></li>
+                    <li class="current-menu-item"><a href="<?php echo home_url(); ?>" title="">Home</a></li>
                     <li class="has-children">
-                        <a href="#0" title="" class="">Blog</a>
+                        <a href="#" title="" class="">Blog</a>
                         <ul class="sub-menu">
-                            <li><a href="single-standard.html">Blog Posts</a></li>
-                            <li><a href="single-video.html">Video Post</a></li>
-                            <li><a href="single-audio.html">Audio Post</a></li>
+                            <!--                            @TODO: MAKE DYNAMIC FOR BLOG PAGES-->
+                            <li><a href="single-standard.html">Posts</a></li>
+                            <!--                            @TODO: MAKE DYNAMIC FOR ARCHIVE PAGES-->
+                            <li><a href="single-video.html">Archive</a></li>
                         </ul>
                     </li>
                     <li class="has-children">
-                        <a href="#0" title="" class="">Categories</a>
+                        <a href="#" title="" class="">Categories</a>
                         <ul class="sub-menu">
-                            <li><a href="category.html">Design</a></li>
-                            <li><a href="category.html">Lifestyle</a></li>
-                            <li><a href="category.html">Inspiration</a></li>
-                            <li><a href="category.html">Work</a></li>
+                            <!--                            @TODO: MAKE DYNAMIC FOR CATEGORIES ARCHIVE-->
+                            <li><a href="category.html">Productivity</a></li>
                             <li><a href="category.html">Health</a></li>
-                            <li><a href="category.html">Photography</a></li>
+                            <li><a href="category.html">Mindfulness</a></li>
+                            <li><a href="category.html">Lifestyle</a></li>
+                            <li><a href="category.html">Motivation</a></li>
+                            <li><a href="category.html">Travel</a></li>
                         </ul>
                     </li>
+                    <!--                            @TODO: MAKE DYNAMIC-->
                     <li><a href="resources.html" title="">Resources</a></li>
                     <li><a href="about.html" title="">About</a></li>
                     <li><a href="contact.html" title="">Contact</a></li>
@@ -792,17 +795,19 @@
                     <div class="column lg-6">
                         <h4>Categories</h4>
                         <ul class="link-list">
-                            <li><a href="category.html">Lifestyle</a></li>
-                            <li><a href="category.html">Workplace</a></li>
-                            <li><a href="category.html">Inspiration</a></li>
-                            <li><a href="category.html">Design</a></li>
+                            <!--                            @TODO: MAKE DYNAMIC-->
+                            <li><a href="category.html">Productivity</a></li>
                             <li><a href="category.html">Health</a></li>
-                            <li><a href="category.html">Photography</a></li>
+                            <li><a href="category.html">Mindfulness</a></li>
+                            <li><a href="category.html">Lifestyle</a></li>
+                            <li><a href="category.html">Motivation</a></li>
+                            <li><a href="category.html">Travel</a></li>
                         </ul>
                     </div>
                     <div class="column lg-6">
                         <h4>Site Links</h4>
                         <ul class="link-list">
+                            <!--                            @TODO: MAKE DYNAMIC-->
                             <li><a href="index.php">Home</a></li>
                             <li><a href="category.html">Categories</a></li>
                             <li><a href="category.html">Blog</a></li>

@@ -45,17 +45,19 @@
                 <div class="column lg-6">
                     <h4>Categories</h4>
                     <ul class="link-list">
-                        <li><a href="category.html">Lifestyle</a></li>
-                        <li><a href="category.html">Workplace</a></li>
-                        <li><a href="category.html">Inspiration</a></li>
-                        <li><a href="category.html">Design</a></li>
+                        <!--                            @TODO: MAKE DYNAMIC-->
+                        <li><a href="category.html">Productivity</a></li>
                         <li><a href="category.html">Health</a></li>
-                        <li><a href="category.html">Photography</a></li>
+                        <li><a href="category.html">Mindfulness</a></li>
+                        <li><a href="category.html">Lifestyle</a></li>
+                        <li><a href="category.html">Motivation</a></li>
+                        <li><a href="category.html">Travel</a></li>
                     </ul>
                 </div>
                 <div class="column lg-6">
                     <h4>Site Links</h4>
                     <ul class="link-list">
+                        <!--                            @TODO: MAKE DYNAMIC-->
                         <li><a href="index.php">Home</a></li>
                         <li><a href="category.html">Categories</a></li>
                         <li><a href="category.html">Blog</a></li>
