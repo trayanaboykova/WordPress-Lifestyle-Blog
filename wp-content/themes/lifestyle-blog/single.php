@@ -98,18 +98,18 @@
 
                         <div class="entry__author-box">
                             <figure class="entry__author-avatar">
-                                <img alt="" src="images/avatars/user-06.jpg" class="avatar">
+                                <img alt="" src="<?php echo get_template_directory_uri(); ?> /images/avatars/trayana-author.jpg" class="avatar">
                             </figure>
                             <div class="entry__author-info">
                                 <h5 class="entry__author-name">
                                     <a href="#0">
-                                        Naruto Uzumaki
+                                        <a href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>">
+                                            <?php echo get_the_author(); ?>
+                                        </a>
                                     </a>
                                 </h5>
                                 <p>
-                                    Pellentesque ornare sem lacinia quam venenatis vestibulum. Nulla vitae elit libero,
-                                    a pharetra augue laboris in sit minim cupidatat ut dolor voluptate enim veniam
-                                    consequat occaecat.
+                                    <?php echo get_the_author_meta('description'); ?>
                                 </p>
                             </div>
                         </div>
@@ -118,24 +118,34 @@
 
                     <div class="post-nav">
                         <div class="post-nav__prev">
-                            <a href="single-standard.html" rel="prev">
-                                <span>Prev</span>
-                                The Pomodoro Technique Really Works.
-                            </a>
+                            <?php
+                            $prev_post = get_previous_post();
+                            if (!empty($prev_post)): ?>
+                                <a href="<?php echo get_permalink($prev_post->ID); ?>" rel="prev">
+                                    <span>Prev</span>
+                                    <?php echo get_the_title($prev_post->ID); ?>
+                                </a>
+                            <?php endif; ?>
                         </div>
                         <div class="post-nav__next">
-                            <a href="single-standard.html" rel="next">
-                                <span>Next</span>
-                                How Imagery Drives User Experience.
-                            </a>
+                            <?php
+                            $next_post = get_next_post();
+                            if (!empty($next_post)): ?>
+                                <a href="<?php echo get_permalink($next_post->ID); ?>" rel="next">
+                                    <span>Next</span>
+                                    <?php echo get_the_title($next_post->ID); ?>
+                                </a>
+                            <?php endif; ?>
                         </div>
                     </div>
+
 
                 </div> <!-- end content-primary -->
 
             </article> <!-- end entry -->
 
             <!-- comments -->
+            <!--            @TODO - MAKE COMMENTS DYNAMIC -->
             <div class="comments-wrap">
 
                 <div id="comments">
