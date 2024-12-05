@@ -117,7 +117,7 @@
             <div class="ss-copyright">
                 <span>© Copyright Spurgeon 2021</span>
                 <span>Design by <a href="https://www.styleshout.com/">StyleShout</a> Distribution <a
-                        href="https://themewagon.com">ThemeWagon</a></span>
+                            href="https://themewagon.com">ThemeWagon</a></span>
             </div>
         </div>
 
