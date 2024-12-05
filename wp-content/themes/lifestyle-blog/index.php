@@ -70,7 +70,7 @@
                     <li class="has-children">
                         <a href="#0" title="" class="">Blog</a>
                         <ul class="sub-menu">
-                            <li><a href="single-standard.html">Standard Post</a></li>
+                            <li><a href="single-standard.html">Blog Posts</a></li>
                             <li><a href="single-video.html">Video Post</a></li>
                             <li><a href="single-audio.html">Audio Post</a></li>
                         </ul>
