@@ -68,6 +68,14 @@
                 <ul class="s-header__nav">
                     <li class="current-menu-item"><a href="index.php" title="">Home</a></li>
                     <li class="has-children">
+                        <a href="#0" title="" class="">Blog</a>
+                        <ul class="sub-menu">
+                            <li><a href="single-standard.html">Standard Post</a></li>
+                            <li><a href="single-video.html">Video Post</a></li>
+                            <li><a href="single-audio.html">Audio Post</a></li>
+                        </ul>
+                    </li>
+                    <li class="has-children">
                         <a href="#0" title="" class="">Categories</a>
                         <ul class="sub-menu">
                             <li><a href="category.html">Design</a></li>
@@ -76,14 +84,6 @@
                             <li><a href="category.html">Work</a></li>
                             <li><a href="category.html">Health</a></li>
                             <li><a href="category.html">Photography</a></li>
-                        </ul>
-                    </li>
-                    <li class="has-children">
-                        <a href="#0" title="" class="">Blog</a>
-                        <ul class="sub-menu">
-                            <li><a href="single-standard.html">Standard Post</a></li>
-                            <li><a href="single-video.html">Video Post</a></li>
-                            <li><a href="single-audio.html">Audio Post</a></li>
                         </ul>
                     </li>
                     <li><a href="resources.html" title="">Resources</a></li>
