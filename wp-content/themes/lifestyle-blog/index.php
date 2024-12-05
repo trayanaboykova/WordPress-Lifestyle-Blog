@@ -86,7 +86,7 @@
                             <li><a href="single-audio.html">Audio Post</a></li>
                         </ul>
                     </li>
-                    <li><a href="styles.html" title="">Styles</a></li>
+                    <li><a href="resources.html" title="">Resources</a></li>
                     <li><a href="about.html" title="">About</a></li>
                     <li><a href="contact.html" title="">Contact</a></li>
                 </ul> <!-- end s-header__nav -->
