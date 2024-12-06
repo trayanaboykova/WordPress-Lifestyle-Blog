@@ -20,6 +20,7 @@
 
 	<!-- favicons
 	================================================== -->
+    <!--    @TODO: ADD MY OWN ICONS-->
 	<link rel="apple-touch-icon" href="<?php echo get_template_directory_uri(); ?> /images/apple-touch-icon.png">
 	<link rel="icon" type="image/png" sizes="32x32"
 	      href="<?php echo get_template_directory_uri(); ?> /images/favicon-32x32.png">
