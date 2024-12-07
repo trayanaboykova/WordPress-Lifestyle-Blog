@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="no-js">
+<html <?php language_attributes(); ?> lang="">
 <head>
 
     <!--- basic page needs
@@ -30,6 +30,7 @@
     <link rel="apple-touch-icon" href="<?php echo get_template_directory_uri(); ?> /images/apple-touch-icon.png">
     <link rel="manifest" href="<?php echo get_template_directory_uri(); ?> /site.webmanifest">
 
+	<?php wp_head(); ?>
 </head>
 
 
@@ -140,47 +141,53 @@
 
         <!-- hero -->
         <div class="hero">
-
             <div class="hero__slider swiper-container">
-
                 <div class="swiper-wrapper">
-					<?php
-					if ( have_posts() ) :
-						while ( have_posts() ) : the_post();
-							?>
+				    <?php
+				    $args = array(
+					    'post_type' => 'post',
+					    'posts_per_page' => 3,
+					    'orderby' => 'date',
+					    'order' => 'DESC',
+				    );
+
+				    $query = new WP_Query($args);
+
+				    if ($query->have_posts()) :
+					    while ($query->have_posts()) : $query->the_post();
+						    ?>
                             <article class="hero__slide swiper-slide">
-                                <!--                                     @TODO: MAKE IMAGE DYNAMIC-->
                                 <div class="hero__entry-image"
-                                     style="background-image: url('<?php echo get_template_directory_uri(); ?> /images/thumbs/featured/featured-01_2000.jpg');">
+                                     style="background-image: url('<?php echo get_the_post_thumbnail_url(get_the_ID(), 'full'); ?>');">
                                 </div>
                                 <div class="hero__entry-text">
                                     <div class="hero__entry-text-inner">
                                         <div class="hero__entry-meta">
-                                       <span class="cat-links">
-                                            <?php the_category( ' ' ); ?>
-                                       </span>
-
+                                    <span class="cat-links">
+                                        <?php the_category(' '); ?>
+                                    </span>
                                         </div>
 
                                         <h2 class="hero__entry-title">
                                             <a href="<?php the_permalink(); ?>">
-												<?php the_title(); ?>
+											    <?php the_title(); ?>
                                             </a>
-
                                         </h2>
                                         <p class="hero__entry-desc">
-											<?php the_excerpt(); ?>
+										    <?php the_excerpt(); ?>
                                         </p>
                                         <a class="hero__more-link" href="<?php the_permalink(); ?>">Read More</a>
                                     </div>
                                 </div>
                             </article>
-						<?php
-						endwhile;
-					else :
-						echo 'No posts found';
-					endif;
-					?>
+					    <?php
+					    endwhile;
+				    else :
+					    echo 'No posts found';
+				    endif;
+
+				    wp_reset_postdata();
+				    ?>
                 </div> <!-- swiper-wrapper -->
 
                 <div class="swiper-pagination"></div>
@@ -461,6 +468,7 @@
 
     </footer><!-- end s-footer -->
 
+	<?php wp_footer(); ?>
 
     <!-- Java Script
     ================================================== -->
