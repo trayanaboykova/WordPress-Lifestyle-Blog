@@ -9,10 +9,39 @@
 * License: Free to use in personal and commercial projects with proper attribution to StyleShout.
 */
 
-/*Making the headline a little smaller, so it looks tidier*/
+/* Making the headline a little smaller, so it looks tidier */
 .hero__entry-title {
     font-size: 4.5rem;
 }
+/* Making the single page headline smaller */
+.entry-wrap  {
+    --entry-title-size: 4rem;
+}
+
+.entry__header {
+    margin-bottom: 4rem;
+}
+
+.entry__media .featured-image img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 100%;
+}
+
+.entry__media .featured-image {
+    text-align: center;
+}
+
+
+/* Pagination */
+.pgn ul.page-numbers li a {
+    margin: 5px;
+    padding: 5px;
+    color: black;
+    font-weight: 450;
+}
+
 
 
 

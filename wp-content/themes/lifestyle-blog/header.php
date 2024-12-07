@@ -71,10 +71,7 @@
                     <li class="has-children">
 						<a href="#" title="" class="">Blog</a>
 						<ul class="sub-menu">
-                            <!--                            @TODO: MAKE DYNAMIC FOR BLOG PAGES-->
-                            <li><a href="single-standard.html">Posts</a></li>
-                            <!--                            @TODO: MAKE DYNAMIC FOR ARCHIVE PAGES-->
-                            <li><a href="single-video.html">Archive</a></li>
+                            <li class="current-menu-item"><a href="<?php echo home_url('/?post_type=post'); ?>" title="">All Posts</a></li>
 						</ul>
 					</li>
 					<li class="has-children">
