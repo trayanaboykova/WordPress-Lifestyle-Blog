@@ -6,7 +6,8 @@
 	================================================== -->
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Lifestyle</title>
+
+    <title>Lifestyle</title>
 
 	<script>
         document.documentElement.classList.remove('no-js');
@@ -15,12 +16,13 @@
 
 	<!-- CSS
 	================================================== -->
-	<link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?> /css/vendor.css">
-	<link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?> /css/styles.css">
-	<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?> /style.css">
+    <link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?> /css/vendor.css">
+    <link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?> /css/styles.css">
+    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?> /style.css">
 
 
-	<!-- favicons
+
+    <!-- favicons
 	================================================== -->
 	<!--    @TODO: ADD MY OWN ICONS-->
 	<link rel="icon" type="image/png" sizes="32x32"
@@ -29,6 +31,7 @@
 	      href="<?php echo get_template_directory_uri(); ?> /images/favicon-16x16.png">
 	<link rel="apple-touch-icon" href="<?php echo get_template_directory_uri(); ?> /images/apple-touch-icon.png">
 	<link rel="manifest" href="<?php echo get_template_directory_uri(); ?> /site.webmanifest">
+
 
 	<?php wp_head(); ?>
 </head>
@@ -70,14 +73,11 @@
 				<h3 class="s-header__nav-heading">Navigate to</h3>
 
 				<ul class="s-header__nav">
-                    <li class="current-menu-item"><a href="<?php echo home_url('/?post_type=post'); ?>" title="">Home</a></li>
+                    <li class="current-menu-item"><a href="<?php echo home_url(); ?>" title="">Home</a></li>
                     <li class="has-children">
 						<a href="#" title="" class="">Blog</a>
 						<ul class="sub-menu">
-							<!--                            @TODO: MAKE DYNAMIC FOR BLOG PAGES-->
-							<li><a href="single-standard.html">Posts</a></li>
-							<!--                            @TODO: MAKE DYNAMIC FOR ARCHIVE PAGES-->
-							<li><a href="single-video.html">Archive</a></li>
+                            <li class="current-menu-item"><a href="<?php echo home_url('/?post_type=post'); ?>" title="">All Posts</a></li>
 						</ul>
 					</li>
 					<li class="has-children">
@@ -268,7 +268,7 @@
 					<?php
 					// Try query-string pagination first to see if it works:
 					$pagination = paginate_links( array(
-						'base'      => @add_query_arg('paged','%#%'),
+						'base'      => add_query_arg('paged','%#%'),
 						'format'    => '?paged=%#%',
 						'current'   => $paged,
 						'total'     => $query->max_num_pages,
@@ -292,6 +292,7 @@
 
 
 	<?php get_footer(); ?>
+    <?php wp_footer(); ?>
 
 	<!-- Java Script
 	================================================== -->
