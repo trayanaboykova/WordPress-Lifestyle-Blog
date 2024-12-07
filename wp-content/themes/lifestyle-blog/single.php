@@ -70,14 +70,20 @@
 
                 <div class="entry__media">
                     <figure class="featured-image">
-                        <img src="<?php echo get_template_directory_uri(); ?> /images/thumbs/single/standard-1200.jpg"
-                             srcset="<?php echo get_template_directory_uri(); ?>/images/thumbs/single/standard-2400.jpg 2400w,
-             <?php echo get_template_directory_uri(); ?>/images/thumbs/single/standard-1200.jpg 1200w,
-             <?php echo get_template_directory_uri(); ?>/images/thumbs/single/standard-600.jpg 600w"
-                             sizes="(max-width: 2400px) 100vw, 2400px" alt="">
-
+			            <?php
+			            // Check if the post has a featured image
+			            if ( has_post_thumbnail() ) :
+				            // Display the featured image with different sizes
+				            the_post_thumbnail( 'full', array(
+					            'srcset' => wp_get_attachment_image_srcset( get_post_thumbnail_id() ),
+					            'sizes'  => '(max-width: 2400px) 100vw, 2400px',
+					            'alt'    => get_the_title()
+				            ) );
+			            endif;
+			            ?>
                     </figure>
                 </div>
+
 
                 <div class="content-primary">
 
@@ -87,15 +93,6 @@
 							<?php the_content(); ?>
 
 						<?php endwhile; ?>
-
-                        <figure class="alignwide">
-                            <img src="<?php echo get_template_directory_uri(); ?> /images/sample-1200.jpg"
-                                 srcset="<?php echo get_template_directory_uri(); ?>/images/sample-2400.jpg 2400w,
-             <?php echo get_template_directory_uri(); ?>/images/sample-1200.jpg 1200w,
-             <?php echo get_template_directory_uri(); ?>/images/sample-600.jpg 600w"
-                                 sizes="(max-width: 2400px) 100vw, 2400px" alt="">
-
-                        </figure>
 
                         <p class="entry__tags">
                             <strong>Tags:</strong>
