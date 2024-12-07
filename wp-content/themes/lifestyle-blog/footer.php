@@ -137,3 +137,5 @@
 	</div> <!-- end ss-go-top -->
 
 </footer><!-- end s-footer -->
+
+<?php wp_footer(); ?>

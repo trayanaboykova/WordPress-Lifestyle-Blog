@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="no-js">
+<html <?php language_attributes(); ?> lang="">
 <head>
 
 	<!--- basic page needs
@@ -28,6 +28,7 @@
 	      href="<?php echo get_template_directory_uri(); ?> /images/favicon-16x16.png">
 	<link rel="manifest" href="<?php echo get_template_directory_uri(); ?> /site.webmanifest">
 
+	<?php wp_head(); ?>
 </head>
 
 <body id="top">
