@@ -41,7 +41,6 @@ Making the single page headline smaller
 Author page
  */
 
-/* Center the author name and bio */
 .author-info {
     text-align: center;
     margin: 0 auto;
@@ -93,8 +92,40 @@ blockquote {
     padding: 1.5rem;
 }
 
+/*
+Authors
+ */
+.page-title {
+    text-align: center;
+    font-size: 3.5em;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
 
+.author-posts {
+    text-align: center;
+}
 
+.author-post-list {
+    list-style: none;
+}
 
+/*
+Dates
+ */
+.page-title {
+    text-align: center;
+    font-size: 3.5em;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
 
+.date-posts {
+    text-align: center;
+}
 
+.date-post-list {
+    list-style: none;
+}

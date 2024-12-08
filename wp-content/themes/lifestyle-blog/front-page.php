@@ -116,10 +116,6 @@
 							<?php endforeach; ?>
                         </ul>
                     </li>
-                    <!--                            @TODO: MAKE DYNAMIC-->
-                    <li><a href="resources.html" title="">Resources</a></li>
-                    <li><a href="about.html" title="">About</a></li>
-                    <li><a href="contact.html" title="">Contact</a></li>
                 </ul> <!-- end s-header__nav -->
 
             </nav> <!-- end s-header__nav-wrap -->

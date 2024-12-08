@@ -161,7 +161,7 @@
                 <div id="comments">
                     <div class="large-12">
 
-                        <h3>5 Comments</h3>
+                        <h3><?php comments_number( 'No Comments', '1 Comment', '% Comments' ); ?></h3>
 
                         <!-- START commentlist -->
                         <ol class="commentlist">

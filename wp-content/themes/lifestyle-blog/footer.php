@@ -28,23 +28,31 @@
                     <h4>Categories</h4>
                     <ul class="link-list">
 						<?php
-						$categories = get_categories( array( 'orderby' => 'name', 'order' => 'ASC', 'number' => 6 ) );
+						$categories = get_categories( array( 'orderby' => 'name', 'order' => 'ASC') );
 						foreach ( $categories as $category ) :
 							?>
                             <li><a href="<?php echo esc_url( get_category_link( $category->term_id ) ); ?>"><?php echo esc_html( $category->name ); ?></a></li>
 						<?php endforeach; ?>
                     </ul>
                 </div>
+
                 <div class="column lg-6">
-                    <h4>Site Links</h4>
-                    <ul class="link-list">
-                        <li><a href="index.php">Home</a></li>
-                        <li><a href="category.html">Categories</a></li>
-                        <li><a href="category.html">Blog</a></li>
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="about.html">Contact</a></li>
-                        <li><a href="#0">Terms & Policy</a></li>
-                    </ul>
+                    <h4>Menu</h4>
+	                <?php
+	                $menu_args = array(
+		                'menu' => 'primary-menu',
+		                'menu_id' => 'link-list',
+		                'menu_class' => 'link-list',
+		                'container' => false,
+		                'container_class' => 'link-list',
+		                'theme_location' => 'primary',
+		                'items_wrap' => '<ul id="%1$s" class="%2$s">%3$s</ul>',
+	                );
+
+	                if ( has_nav_menu( 'primary' ) ) {
+		                wp_nav_menu( $menu_args );
+	                }
+	                ?>
                 </div>
             </div>
         </div>
