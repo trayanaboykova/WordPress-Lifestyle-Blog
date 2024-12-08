@@ -7,7 +7,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Lifestyle</title>
+    <title><?php the_title(); ?></title>
 
 	<script>
         document.documentElement.classList.remove('no-js');
@@ -19,8 +19,6 @@
     <link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?> /css/vendor.css">
     <link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?> /css/styles.css">
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?> /style.css">
-
-
 
     <!-- favicons
 	================================================== -->
@@ -75,23 +73,44 @@
 				<ul class="s-header__nav">
                     <li class="current-menu-item"><a href="<?php echo home_url(); ?>" title="">Home</a></li>
                     <li class="has-children">
-						<a href="#" title="" class="">Blog</a>
-						<ul class="sub-menu">
+                        <a href="#" title="" class="">Blog</a>
+                        <ul class="sub-menu">
                             <li class="current-menu-item"><a href="<?php echo home_url('/?post_type=post'); ?>" title="">All Posts</a></li>
-						</ul>
-					</li>
-					<li class="has-children">
-						<a href="#" title="" class="">Categories</a>
-						<ul class="sub-menu">
-							<!--                            @TODO: MAKE DYNAMIC FOR CATEGORIES ARCHIVE-->
-							<li><a href="category.html">Productivity</a></li>
-							<li><a href="category.html">Health</a></li>
-							<li><a href="category.html">Mindfulness</a></li>
-							<li><a href="category.html">Lifestyle</a></li>
-							<li><a href="category.html">Motivation</a></li>
-							<li><a href="category.html">Travel</a></li>
-						</ul>
-					</li>
+							<?php
+							$authors = get_users();
+							foreach ($authors as $author) :
+								?>
+                                <li><a href="<?php echo get_author_posts_url( $author->ID ); ?>" title="Posts by <?php echo esc_html($author->display_name); ?>">Posts by <?php echo esc_html($author->display_name); ?></a></li>
+							<?php endforeach; ?>
+							<?php
+							global $wpdb;
+							$years = $wpdb->get_results("SELECT DISTINCT YEAR(post_date) as year FROM {$wpdb->posts} WHERE post_status = 'publish' AND post_type = 'post' ORDER BY year DESC");
+							foreach ($years as $year) :
+								?>
+                                <li><a href="<?php echo get_year_link( $year->year ); ?>" title="Posts from <?php echo $year->year; ?>">Posts from <?php echo $year->year; ?></a></li>
+							<?php endforeach; ?>
+                        </ul>
+                    </li>
+
+                    <li class="has-children">
+                        <a href="#" title="" class="">Categories</a>
+                        <ul class="sub-menu">
+							<?php
+							$categories = get_categories( array(
+								'orderby' => 'name',
+								'order'   => 'ASC'
+							) );
+
+							foreach ( $categories as $category ) :
+								?>
+                                <li>
+                                    <a href="<?php echo get_category_link( $category->term_id ); ?>">
+										<?php echo esc_html( $category->name ); ?>
+                                    </a>
+                                </li>
+							<?php endforeach; ?>
+                        </ul>
+                    </li>
 					<!--                            @TODO: MAKE DYNAMIC-->
 					<li><a href="resources.html" title="">Resources</a></li>
 					<li><a href="about.html" title="">About</a></li>
