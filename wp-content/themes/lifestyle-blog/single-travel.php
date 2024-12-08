@@ -29,6 +29,20 @@
 						<?php the_content(); ?>
                     </div>
 
+                    <!-- Display country -->
+					<?php
+					$country = get_post_meta(get_the_ID(), '_travel_country', true);
+					if ($country) {
+						echo '<div class="entry__country">';
+						echo '<p><strong>Country:</strong> ' . esc_html($country) . '</p>';
+						echo '</div>';
+					} else {
+						echo '<div class="entry__country">';
+						echo '<p><strong>Country:</strong> Not specified</p>';
+						echo '</div>';
+					}
+					?>
+
                     <!-- Display taxonomy terms -->
 					<?php
 					$terms = get_the_terms(get_the_ID(), 'travel_category');
@@ -39,8 +53,19 @@
 						foreach ($terms as $term) {
 							$term_links[] = '<a href="' . esc_url(get_term_link($term)) . '">' . esc_html($term->name) . '</a>';
 						}
-						echo implode(', ', $term_links); // Join terms with commas
+						echo implode(', ', $term_links);
 						echo '</p>';
+						echo '</div>';
+					}
+					?>
+
+                    <!-- Display Travel Notes -->
+					<?php
+					$travel_notes = get_field('travel_notes'); // ACF field retrieval
+					if ($travel_notes) {
+						echo '<div class="entry__notes">';
+						echo '<h3>Travel Notes</h3>';
+						echo '<p>' . esc_html($travel_notes) . '</p>';
 						echo '</div>';
 					}
 					?>
@@ -54,14 +79,12 @@
 
 </div> <!-- end s-content -->
 
-
 <?php get_footer(); ?>
-
 
 <!-- Java Script
 ================================================== -->
-<script src="<?php echo get_template_directory_uri(); ?> /js/plugins.js"></script>
-<script src="<?php echo get_template_directory_uri(); ?> /js/main.js"></script>
+<script src="<?php echo get_template_directory_uri(); ?>/js/plugins.js"></script>
+<script src="<?php echo get_template_directory_uri(); ?>/js/main.js"></script>
 
 </body>
 </html>

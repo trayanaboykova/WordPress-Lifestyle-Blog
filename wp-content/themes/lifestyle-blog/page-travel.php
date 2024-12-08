@@ -43,6 +43,18 @@ get_header(); ?>
 										<?php the_excerpt(); ?>
                                     </div>
 
+                                    <!-- Display country -->
+                                    <div class="travel-card__country">
+										<?php
+										$country = get_post_meta(get_the_ID(), '_travel_country', true);
+										if ($country) {
+											echo '<p><strong>Country:</strong> ' . esc_html($country) . '</p>';
+										} else {
+											echo '<p><strong>Country:</strong> Not specified</p>';
+										}
+										?>
+                                    </div>
+
                                     <!-- Display taxonomy terms -->
                                     <div class="travel-card__taxonomy">
 										<?php
@@ -53,12 +65,23 @@ get_header(); ?>
 											foreach ($terms as $term) {
 												$term_links[] = '<a href="' . esc_url(get_term_link($term)) . '">' . esc_html($term->name) . '</a>';
 											}
-											echo implode(', ', $term_links); // Join the links with commas
+											echo implode(', ', $term_links);
 											echo '</p>';
 										} else {
 											echo '<p><strong>Categories:</strong> None</p>';
 										}
+										?>
+                                    </div>
 
+                                    <!-- Display Travel Notes -->
+                                    <div class="travel-card__notes">
+										<?php
+										$travel_notes = get_field('travel_notes'); // ACF field retrieval
+										if ($travel_notes) {
+											echo '<p><strong>Notes:</strong> ' . esc_html($travel_notes) . '</p>';
+										} else {
+											echo '<p><strong>Notes:</strong> None</p>';
+										}
 										?>
                                     </div>
                                 </div>
