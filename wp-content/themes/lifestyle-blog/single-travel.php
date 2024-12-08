@@ -4,37 +4,53 @@
 ================================================== -->
 <div id="content" class="s-content s-content--single-travel">
 
-	<div class="row entry-wrap">
-		<div class="column lg-12">
+    <div class="row entry-wrap">
+        <div class="column lg-12">
 
-			<article class="entry travel-entry">
+            <article class="entry travel-entry">
 
-				<header class="entry__header entry__header--narrower">
+                <header class="entry__header entry__header--narrower">
 
-					<h1 class="entry__title">
+                    <h1 class="entry__title">
 						<?php the_title(); ?>
-					</h1>
+                    </h1>
 
 					<?php if ( has_post_thumbnail() ) : ?>
-						<div class="entry__thumb">
+                        <div class="entry__thumb">
 							<?php the_post_thumbnail('large'); ?>
-						</div>
+                        </div>
 					<?php endif; ?>
 
-				</header>
+                </header>
 
 				<?php while( have_posts() ) : the_post(); ?>
 
-					<div class="entry__content">
+                    <div class="entry__content">
 						<?php the_content(); ?>
-					</div>
+                    </div>
+
+                    <!-- Display taxonomy terms -->
+					<?php
+					$terms = get_the_terms(get_the_ID(), 'travel_category');
+					if ($terms && !is_wp_error($terms)) {
+						echo '<div class="entry__taxonomy">';
+						echo '<p><strong>Categories:</strong> ';
+						$term_links = [];
+						foreach ($terms as $term) {
+							$term_links[] = '<a href="' . esc_url(get_term_link($term)) . '">' . esc_html($term->name) . '</a>';
+						}
+						echo implode(', ', $term_links); // Join terms with commas
+						echo '</p>';
+						echo '</div>';
+					}
+					?>
 
 				<?php endwhile; ?>
 
-			</article> <!-- end entry -->
+            </article> <!-- end entry -->
 
-		</div>
-	</div> <!-- end entry-wrap -->
+        </div>
+    </div> <!-- end entry-wrap -->
 
 </div> <!-- end s-content -->
 
