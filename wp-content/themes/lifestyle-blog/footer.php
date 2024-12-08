@@ -39,13 +39,22 @@
                 <div class="column lg-6">
                     <h4>Categories</h4>
                     <ul class="link-list">
-                        <!--                            @TODO: MAKE DYNAMIC-->
-                        <li><a href="category.html">Productivity</a></li>
-                        <li><a href="category.html">Health</a></li>
-                        <li><a href="category.html">Mindfulness</a></li>
-                        <li><a href="category.html">Lifestyle</a></li>
-                        <li><a href="category.html">Motivation</a></li>
-                        <li><a href="category.html">Travel</a></li>
+			            <?php
+
+			            $categories = get_categories( array(
+				            'orderby' => 'name',
+				            'order'   => 'ASC' ,
+                            'number'  => 6
+			            ) );
+
+			            foreach ( $categories as $category ) :
+				            ?>
+                            <li>
+                                <a href="<?php echo esc_url( get_category_link( $category->term_id ) ); ?>">
+						            <?php echo esc_html( $category->name ); ?>
+                                </a>
+                            </li>
+			            <?php endforeach; ?>
                     </ul>
                 </div>
                 <div class="column lg-6">
