@@ -15,7 +15,9 @@ function lifestyle_theme_enqueue_styles() {
 	wp_enqueue_style( 'lifestyle-main-style', get_template_directory_uri() . '/style.css', array( 'lifestyle-vendor-styles' ) );
 }
 
-//Pagination
+/*
+ * Pagination
+ */
 function fix_paged_parameter($query) {
 	if (!is_admin() && $query->is_main_query()) {
 		if (is_category() || is_tag() || is_archive()) {
@@ -26,4 +28,20 @@ function fix_paged_parameter($query) {
 	}
 }
 add_action('pre_get_posts', 'fix_paged_parameter');
+
+/*
+ * Sidebar
+ */
+function my_theme_widgets_init() {
+	register_sidebar( array(
+		'name'          => 'Main Sidebar',
+		'id'            => 'sidebar-1',
+		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
+	) );
+}
+add_action( 'widgets_init', 'my_theme_widgets_init' );
+
 

@@ -82,6 +82,17 @@ Pagination
     font-weight: 450;
 }
 
+/*
+Widgets
+ */
+h3.wp-block-heading {
+    margin-top: 0;
+}
+
+blockquote {
+    padding: 1.5rem;
+}
+
 
 
 

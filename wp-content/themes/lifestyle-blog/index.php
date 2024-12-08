@@ -55,7 +55,6 @@
             </div> <!-- end masonry -->
         </div> <!-- end bricks -->
 
-
     </section> <!-- end s-content -->
 
 
