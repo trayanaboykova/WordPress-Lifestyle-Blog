@@ -9,11 +9,15 @@
 * License: Free to use in personal and commercial projects with proper attribution to StyleShout.
 */
 
-/* Making the headline a little smaller, so it looks tidier */
+/*
+Making the headline a little smaller, so it looks tidier
+ */
 .hero__entry-title {
     font-size: 4.5rem;
 }
-/* Making the single page headline smaller */
+/*
+Making the single page headline smaller
+ */
 .entry-wrap  {
     --entry-title-size: 4rem;
 }
@@ -33,8 +37,44 @@
     text-align: center;
 }
 
+/*
+Author page
+ */
 
-/* Pagination */
+/* Center the author name and bio */
+.author-info {
+    text-align: center;
+    margin: 0 auto;
+    max-width: 800px;
+}
+
+.author-name {
+    font-size: 4rem;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.author-bio {
+    font-size: 2rem;
+    margin-top: 10px;
+    margin-bottom: 0;
+}
+
+/* Center the date title */
+.date-info {
+    text-align: center;
+    margin: 0 auto;
+    max-width: 800px;
+}
+
+.date-info h1 {
+    font-size: 4rem;
+    font-weight: bold;
+}
+
+/*
+Pagination
+ */
 .pgn ul.page-numbers li a {
     margin: 5px;
     padding: 5px;
