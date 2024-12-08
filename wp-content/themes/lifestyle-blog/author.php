@@ -6,18 +6,18 @@ get_header(); ?>
 <section id="content" class="s-content">
 	<div class="container">
 		<?php
-		// Display the author's name and bio
 		if ( have_posts() ) :
-			// Get author information
 			$author = get_queried_object();
-			echo '<h1>Posts by ' . get_the_author_meta( 'display_name', $author->ID ) . '</h1>';
-			echo '<div class="author-bio">';
-			echo get_the_author_meta( 'description', $author->ID ); // Display author bio if available
-			echo '</div>';
-		else :
-			echo '<h1>No posts found for this author.</h1>';
-		endif;
-		?>
+			?>
+            <div class="author-info">
+                <h1 class="author-name">Posts by <?php echo get_the_author_meta( 'display_name', $author->ID ); ?></h1>
+                <div class="author-bio">
+					<?php echo get_the_author_meta( 'description', $author->ID ); ?>
+                </div>
+            </div>
+		<?php else : ?>
+            <h1>No posts found for this author.</h1>
+		<?php endif; ?>
 
 		<!-- masonry -->
 		<div id="bricks" class="bricks">
@@ -26,17 +26,15 @@ get_header(); ?>
 					<div class="grid-sizer"></div>
 
 					<?php
-					// Get the author's ID
 					$author_id = get_query_var( 'author' );
 					$args = array(
 						'post_type'      => 'post',
 						'posts_per_page' => -1,
 						'order'          => 'DESC',
 						'orderby'        => 'date',
-						'author'         => $author_id // Filter posts by the author ID
+						'author'         => $author_id
 					);
 
-					// Custom query to fetch posts by the author
 					$query = new WP_Query( $args );
 
 					if ( $query->have_posts() ) :

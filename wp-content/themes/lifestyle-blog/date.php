@@ -5,16 +5,12 @@ get_header(); ?>
 <section id="content" class="s-content">
 	<div class="container">
 		<?php
-		// Display title based on the current date archive
 		if ( is_year() ) :
-			// Year archive
-			echo '<h1>Posts from ' . get_the_date( 'Y' ) . '</h1>';
-		elseif ( is_month() ) :
-			// Month archive
-			echo '<h1>Posts from ' . get_the_date( 'F Y' ) . '</h1>';
-		elseif ( is_day() ) :
-			// Day archive
-			echo '<h1>Posts from ' . get_the_date( 'F j, Y' ) . '</h1>';
+			echo '<div class="date-info"><h1>Posts from ' . get_the_date( 'Y' ) . '</h1></div>';
+        elseif ( is_month() ) :
+			echo '<div class="date-info"><h1>Posts from ' . get_the_date( 'F Y' ) . '</h1></div>';
+        elseif ( is_day() ) :
+			echo '<div class="date-info"><h1>Posts from ' . get_the_date( 'F j, Y' ) . '</h1></div>';
 		endif;
 		?>
 
@@ -100,7 +96,6 @@ get_header(); ?>
 						echo 'No posts found';
 					endif;
 
-					// Reset the query after custom loop
 					wp_reset_postdata();
 					?>
 				</div> <!-- end bricks-wrapper -->
