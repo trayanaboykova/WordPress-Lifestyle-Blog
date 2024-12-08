@@ -3,7 +3,8 @@
  * Enqueue JS for AJAX
  */
 function enqueue_ajax_filter_scripts() {
-	wp_enqueue_script('ajax-filter', plugin_dir_url(__FILE__) . 'js/ajax-filter.js', ['jquery'], null, true);
+	wp_enqueue_script( 'ajax-filter', plugins_url( '../js/ajax-filter.js', __FILE__ ), array('jquery'), '1.0', true );
+
 	wp_localize_script('ajax-filter', 'ajax_filter_params', [
 		'ajax_url' => admin_url('admin-ajax.php'),
 	]);
