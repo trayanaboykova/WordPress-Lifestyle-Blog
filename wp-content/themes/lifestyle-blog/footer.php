@@ -17,7 +17,8 @@
             <!-- Sidebar -->
             <div class="row">
                 <div class="column lg-12">
-			        <?php get_sidebar(); ?>
+	                <?php get_sidebar( 'footer-sidebar' ); ?>
+
                 </div>
             </div> <!-- end row -->
         </div> <!-- end s-footer__about -->

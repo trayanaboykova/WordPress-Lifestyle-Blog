@@ -15,8 +15,9 @@ function lifestyle_theme_enqueue_styles() {
 	wp_enqueue_style( 'lifestyle-main-style', get_template_directory_uri() . '/style.css', array( 'lifestyle-vendor-styles' ) );
 }
 
-/*
+/**
  * Pagination
+ * @return void
  */
 function fix_paged_parameter($query) {
 	if (!is_admin() && $query->is_main_query()) {
@@ -34,17 +35,29 @@ add_action('pre_get_posts', 'fix_paged_parameter');
  * Sidebar
  * @return void
  */
-function lifestyle_widgets_init() {
+function lifestyle_register_sidebars() {
+	// Register Main Sidebar
 	register_sidebar( array(
-		'name'          => 'Main Sidebar',
-		'id'            => 'sidebar-1',
+		'name'          => 'Footer Sidebar',
+		'id'            => 'footer-sidebar',
+		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
+	) );
+
+	// Register Front Page Sidebar
+	register_sidebar( array(
+		'name'          => 'Front Page Sidebar',
+		'id'            => 'sidebar-front-page',
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</section>',
 		'before_title'  => '<h2 class="widget-title">',
 		'after_title'   => '</h2>',
 	) );
 }
-add_action( 'widgets_init', 'lifestyle_widgets_init' );
+add_action( 'widgets_init', 'lifestyle_register_sidebars' );
+
 
 /**
  * Menu

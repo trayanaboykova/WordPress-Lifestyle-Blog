@@ -139,5 +139,11 @@ h2.comments-title {
     line-height: 1.4;
 }
 
+/*
+Sidebar - front page
+ */
+aside#front-page-sidebar.widget-area {
+    background-color: red; /* Example to test selection */
+}
 
 

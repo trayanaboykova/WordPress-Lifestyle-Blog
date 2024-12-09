@@ -214,6 +214,7 @@
 
             </div> <!-- end hero slider -->
 
+
             <a href="#bricks" class="hero__scroll-down smoothscroll">
                 <svg width="24" height="24" fill="none" viewBox="0 0 24 24">
                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
@@ -224,6 +225,7 @@
                 <span>Scroll</span>
             </a>
         </div> <!-- end hero -->
+
 
         <!-- masonry -->
         <div id="bricks" class="bricks">
@@ -306,15 +308,25 @@
                 </div> <!-- end column -->
             </div> <!-- end pagination -->
         </div> <!-- end bricks -->
-</section> <!-- end s-content -->
 
-<?php get_footer(); ?>
-<?php wp_footer(); ?>
+        <div style="text-align: center; font-size: 24px; margin: 20px 0;">✨✨✨</div>
 
-<!-- Java Script
-================================================== -->
-<script src="<?php echo get_template_directory_uri(); ?> /js/plugins.js"></script>
-<script src="<?php echo get_template_directory_uri(); ?> /js/main.js"></script>
+    </section> <!-- end s-content -->
+
+    <!-- Sidebar -->
+	<?php if ( is_active_sidebar( 'sidebar-front-page' ) ) : ?>
+        <aside id="front-page-sidebar" class="widget-area">
+			<?php dynamic_sidebar( 'sidebar-front-page' ); ?>
+        </aside>
+	<?php endif; ?>
+
+	<?php get_footer(); ?>
+	<?php wp_footer(); ?>
+
+    <!-- Java Script
+	================================================== -->
+    <script src="<?php echo get_template_directory_uri(); ?> /js/plugins.js"></script>
+    <script src="<?php echo get_template_directory_uri(); ?> /js/main.js"></script>
 
 </body>
 </html>
