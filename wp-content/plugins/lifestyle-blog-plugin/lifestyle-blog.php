@@ -13,9 +13,9 @@ if ( ! defined( 'LIFESTYLE_PLUGIN_ASSETS_URL' ) ) {
 	define( 'LIFESTYLE_PLUGIN_ASSETS_URL',  plugin_dir_url( __FILE__ ) . 'assets' );
 }
 
-require 'includes/post-types.php';
-require 'includes/taxonomies.php';
-require 'includes/meta-boxes.php';
 require 'includes/options-page.php';
 require 'includes/acf-field.php';
 require 'includes/filter.php';
+require 'includes/shortcode.php';
+require 'includes/filter-manipulation.php';
+require 'includes/class-lifestyle-plugin.php';
