@@ -1,6 +1,5 @@
 <?php get_header(); ?>
 
-
     <!-- # site-content
 	================================================== -->
     <div id="content" class="s-content s-content--page">

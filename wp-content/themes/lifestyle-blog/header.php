@@ -18,17 +18,8 @@
 	<link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?> /css/vendor.css">
 	<link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?> /css/styles.css">
 
-	<!-- favicons
-	================================================== -->
-    <!--    @TODO: ADD MY OWN ICONS-->
-	<link rel="apple-touch-icon" href="<?php echo get_template_directory_uri(); ?> /images/apple-touch-icon.png">
-	<link rel="icon" type="image/png" sizes="32x32"
-	      href="<?php echo get_template_directory_uri(); ?> /images/favicon-32x32.png">
-	<link rel="icon" type="image/png" sizes="16x16"
-	      href="<?php echo get_template_directory_uri(); ?> /images/favicon-16x16.png">
-	<link rel="manifest" href="<?php echo get_template_directory_uri(); ?> /site.webmanifest">
-
 	<?php wp_head(); ?>
+
 </head>
 
 <body id="top">

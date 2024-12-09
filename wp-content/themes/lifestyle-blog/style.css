@@ -143,7 +143,12 @@ h2.comments-title {
 Sidebar - front page
  */
 aside#front-page-sidebar.widget-area {
-    background-color: red; /* Example to test selection */
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+    text-align: justify;
 }
+
+
 
 
