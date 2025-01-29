@@ -3,7 +3,7 @@ This project was created as part of the [WordPress for Developers Course](https:
 
 ## Project Overview
 
-The **WordPress-Lifestyle-Blog** is a fully functional WordPress-based website tailored to share engaging lifestyle content. This project showcases the practical implementation of WordPress development principles through a custom-built theme and plugin, meeting all course requirements. The website utilizes dynamic WordPress features such as custom post types, custom taxonomies, and AJAX for a seamless user experience.
+The **WordPress-Lifestyle-Blog** is a fully functional WordPress-based website tailored to share engaging lifestyle content. This project showcases the practical implementation of WordPress development principles through a custom-built theme and plugin, meeting all course requirements. The website utilizes dynamic WordPress features such as custom post types, custom taxonomies, and AJAX for a seamless user experience. 
 
 ### Key Features
 
